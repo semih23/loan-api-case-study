@@ -1,6 +1,6 @@
 # Credit Module API
 
-This project is a Spring Boot-based REST API designed for a bank, enabling authorized employees (ADMIN role) and customers (CUSTOMER role) to manage loan creation, listing, and payments. The system features role-based access control and includes logic for early/late payment adjustments. It aims to simulate a production-ready (or at least test environment-ready) application.
+This project is a Spring Boot-based REST API designed for a bank, enabling authorized employees (ADMIN role) and customers (CUSTOMER role) to manage loan creation, listing, and payments. The system features role-based access control and includes logic for early/late payment adjustments. It aims to simulate a production-ready application.
 
 ---
 
@@ -25,7 +25,7 @@ To build and run this project, you need to have the following installed on your 
     ```bash
     java -jar target/LoanAPI-0.0.1-SNAPSHOT.jar
     ```
-    The application will start on the default port `8080`. Upon first run with an empty database, a default `admin` user will be created (username: `admin`, password: `password`).
+    The application will start on the default port `8080`. Upon first run with an empty database, a default `admin` user will be created (username: `admin`, password: `1234`).
 
 ---
 
