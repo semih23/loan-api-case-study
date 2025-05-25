@@ -195,3 +195,13 @@ When using a tool like Postman, select the "Basic Auth" type in the "Authorizati
 
 ---
 
+## Database (H2 Console)
+
+The application uses an H2 file-based database. The database files are stored in the `./data` directory in the project root.
+
+You can access the H2 database console in your browser when the application is running:
+* **URL:** `http://localhost:8080/h2-console`
+* **JDBC URL:** `jdbc:h2:file:./data/loanapidb` 
+* **User Name:** `root`
+* **Password:** (leave blank)
+* ---
