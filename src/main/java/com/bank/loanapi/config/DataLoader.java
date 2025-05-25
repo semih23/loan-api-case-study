@@ -51,7 +51,7 @@ public class DataLoader implements CommandLineRunner {
             System.out.println("No users found in the database. Creating default admin user...");
             User adminUser = new User(
                     "admin",
-                    passwordEncoder.encode("password"), // Encode the password!
+                    passwordEncoder.encode("1234"), // Encode the password!
                     "ROLE_ADMIN" // Assign the ADMIN role
             );
             userRepository.save(adminUser);
