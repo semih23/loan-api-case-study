@@ -94,7 +94,11 @@ All primary business information is stored in the database using the H2 database
     * In this case, the `paidAmount` for the installment will be higher than its original `amount`.
 
 ---
+## Unit Tests
 
+22 unit tests have been written for all service layer components to ensure business logic correctness and to facilitate a production-like development approach. These tests cover various scenarios including successful operations, error conditions, and business rule validations. Tests can be run using the standard Maven command: `mvn test`.
+
+---
 ## API Usage
 
 ### Authentication
@@ -191,8 +195,3 @@ When using a tool like Postman, select the "Basic Auth" type in the "Authorizati
 
 ---
 
-## Unit Tests
-
-Unit tests have been written for key service layer components to ensure business logic correctness and to facilitate a production-like development approach. These tests cover various scenarios including successful operations, error conditions, and business rule validations. Tests can be run using the standard Maven command: `mvn test`.
-
----
