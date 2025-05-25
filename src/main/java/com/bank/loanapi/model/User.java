@@ -12,7 +12,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
-// import java.util.Set; // No longer explicitly used, can be removed if Arrays.stream(...).collect(Collectors.toSet()) is used
 import java.util.stream.Collectors;
 
 @Data // Lombok: Generates @Getter, @Setter, @ToString, @EqualsAndHashCode

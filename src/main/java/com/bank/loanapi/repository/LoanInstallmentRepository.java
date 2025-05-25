@@ -4,7 +4,6 @@ import com.bank.loanapi.model.LoanInstallment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate; // Import for the commented-out example method
 import java.util.List;
 
 @Repository // Indicates that this interface is a Spring Bean and will be used for database operations.
@@ -30,9 +29,5 @@ public interface LoanInstallmentRepository extends JpaRepository<LoanInstallment
      */
     List<LoanInstallment> findByLoan_IdAndIsPaidFalseOrderByDueDateAsc(Long loanId);
 
-    // Example of a more complex query method that could be needed for advanced payment processing:
-    // This method would find unpaid installments for a specific loan, due on or before a certain date, ordered by due date.
-    // For now, only the basic listing and the specific payment processing query above are implemented.
-    // Example:
-    // List<LoanInstallment> findByLoan_IdAndIsPaidFalseAndDueDateLessThanEqualOrderByDueDateAsc(Long loanId, LocalDate date);
+
 }

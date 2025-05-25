@@ -228,7 +228,7 @@ public class LoanService {
 
         for (LoanInstallment installment : unpaidInstallments) {
             if (installment.getDueDate().isAfter(paymentWindowEnd)) {
-                if (installmentsPaidCount == 0 && feedbackMessage == null) {
+                if (installmentsPaidCount == 0) {
                     feedbackMessage = "No installments are currently payable within the 3-month payment window.";
                 }
                 break;
@@ -262,7 +262,7 @@ public class LoanService {
                 totalAmountActuallySpent = totalAmountActuallySpent.add(actualPaymentForInstallment);
                 installmentsPaidCount++;
             } else {
-                if (installmentsPaidCount == 0 && feedbackMessage == null) {
+                if (installmentsPaidCount == 0) {
                     if (paymentAmount.compareTo(installment.getAmount()) < 0 && paymentAmount.compareTo(actualPaymentForInstallment) < 0) {
                         feedbackMessage = "Payment amount is insufficient to cover the principal of the first due installment (Amount: " + installment.getAmount().setScale(2, RoundingMode.HALF_UP) + ").";
                     } else if (paymentAmount.compareTo(actualPaymentForInstallment) < 0) {

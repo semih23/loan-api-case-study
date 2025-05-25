@@ -5,8 +5,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-// Imports for InMemoryUserDetailsManager, User, and UserDetails are no longer needed
-// as we are using a custom UserDetailsService.
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -35,7 +33,6 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    // The UserDetailsService bean (previously InMemoryUserDetailsManager) has been REMOVED.
     // Spring Boot will automatically detect and use our CustomUserDetailsService @Service bean
     // because it implements the UserDetailsService interface.
 

@@ -17,7 +17,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class DataLoader implements CommandLineRunner {
 
-    // private final CustomerRepository customerRepository; // Kept for context, but might not be used if only creating admin user
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
@@ -25,14 +24,12 @@ public class DataLoader implements CommandLineRunner {
      * Constructor for DataLoader.
      * Injects necessary repositories and the password encoder.
      *
-     * @param customerRepository Repository for customer data (potentially unused if only creating admin).
      * @param userRepository     Repository for user data.
      * @param passwordEncoder    Encoder for hashing passwords.
      */
-    public DataLoader(CustomerRepository customerRepository, // customerRepository might be removed if not creating sample customers
+    public DataLoader(
                       UserRepository userRepository,
                       PasswordEncoder passwordEncoder) {
-        // this.customerRepository = customerRepository;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
@@ -60,23 +57,6 @@ public class DataLoader implements CommandLineRunner {
             System.out.println("Users already exist in the database. Default admin user not created.");
         }
 
-        // Note: Sample Customer creation logic has been removed from here.
-        // Customers (and their associated ROLE_CUSTOMER users) should now be created via the API
-        // by an authenticated ADMIN user (e.g., the default 'admin' created above).
-        // This DataLoader's primary responsibility is to ensure an initial admin account exists.
 
-        // Example for adding test customers if truly needed for specific startup scenarios (generally not recommended here):
-        // if (customerRepository.count() == 0 && userRepository.findByUsername("someTestCustomer").isEmpty()) {
-        //     System.out.println("Creating a sample test customer and user (for development only)...");
-        //     User testCustomerUser = new User("someTestCustomer", passwordEncoder.encode("testPass"), "ROLE_CUSTOMER");
-        //     Customer testCustomer = new Customer();
-        //     testCustomer.setName("Sample");
-        //     testCustomer.setSurname("User");
-        //     testCustomer.setCreditLimit(BigDecimal.valueOf(20000));
-        //     testCustomer.setUsedCreditLimit(BigDecimal.ZERO);
-        //     testCustomer.setUser(testCustomerUser); // Link customer to user
-        //     customerRepository.save(testCustomer); // This will also save the User due to Cascade.ALL
-        //     System.out.println("Sample test customer created.");
-        // }
     }
 }

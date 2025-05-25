@@ -2,7 +2,6 @@ package com.bank.loanapi.service;
 
 import com.bank.loanapi.model.User;
 import com.bank.loanapi.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired; // Though constructor injection doesn't strictly need @Autowired if there's only one constructor
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -23,7 +22,6 @@ public class CustomUserDetailsService implements UserDetailsService {
      *
      * @param userRepository Repository for user data operations.
      */
-    @Autowired // @Autowired is optional here as Spring automatically injects if there's only one constructor.
     public CustomUserDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
