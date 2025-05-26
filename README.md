@@ -111,7 +111,7 @@ All API endpoints are secured using **HTTP Basic Authentication**. Every request
     * Has full access to all API endpoints and can operate for all customers.
     * A default admin user is created on first application startup if no users exist in the database:
         * **Username:** `admin`
-        * **Password:** `password` (This is the raw password; it will be encoded in the database).
+        * **Password:** `1234` (This is the raw password; it will be encoded in the database).
 * **CUSTOMER Role:**
     * Can perform operations only related to their own data (e.g., list their own loans, pay their own loans).
     * Customer users and their credentials are created by an ADMIN via the "Create Customer" endpoint. The username and password provided during customer creation are used for login.
